@@ -1,0 +1,436 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ts",
+				"tsTARJETAS"
+			],
+			[
+				"tar",
+				"tarjetas_all"
+			],
+			[
+				"Cuen",
+				"cuentaAsociada"
+			],
+			[
+				"lista_",
+				"lista_tarjetas_data"
+			],
+			[
+				"lista",
+				"lista_tarjetas"
+			],
+			[
+				"cuenta",
+				"cuentaAsociada"
+			],
+			[
+				"num",
+				"numContratosDuplicados"
+			],
+			[
+				"quer",
+				"query_prestamos"
+			],
+			[
+				"id",
+				"idcontrn"
+			],
+			[
+				"list",
+				"lista_tarjetas"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 269.0,
+		"last_filter": "conf",
+		"selected_items":
+		[
+			[
+				"conf",
+				"Set Syntax: Generic Config"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pig",
+				"Set Syntax: Pig"
+			],
+			[
+				"sftp s",
+				"SFTP: Browse Server…"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"go build",
+				"GoSublime: Run build command"
+			],
+			[
+				"gosublime",
+				"GoSublime: Browse Declarations"
+			],
+			[
+				"go",
+				"Go: Get"
+			],
+			[
+				"istall ",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"s",
+				"SFTP: Show Panel"
+			],
+			[
+				"sftp",
+				"SFTP: Map to Remote…"
+			],
+			[
+				"show",
+				"SFTP: Show Panel"
+			],
+			[
+				"Python",
+				"SublimeREPL: Python"
+			],
+			[
+				"SFTP",
+				"SublimeREPL: CoffeeScript"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"repl",
+				"SublimeREPL: R"
+			],
+			[
+				"R",
+				"Build With: R"
+			],
+			[
+				"REPL",
+				"Set Syntax: Io Repl"
+			],
+			[
+				"R CONSOLE",
+				"Set Syntax: R Console"
+			]
+		],
+		"width": 476.0
+	},
+	"console":
+	{
+		"height": 148.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/consolida-prestamos-lite2.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/consolida-prestamos-lite.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/consolida-prestamos-lite.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/core-batch.sh",
+		"/D/error_mongo/resultado.txt",
+		"/D/error_mongo/TestMongoDB.scala",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/test-mongodb.conf",
+		"/D/GitHub/EjemplosHadoop/access_logs/upload.sh",
+		"/D/GitHub/EjemplosHadoop/access_logs/intermediate_access_logs.sql",
+		"/D/GitHub/EjemplosHadoop/access_logs/insert.hql",
+		"/D/GitHub/EjemplosHadoop/hive/query.hql",
+		"/D/GitHub/EjemplosHadoop/hive/exec_query.sh",
+		"/D/GitHub/EjemplosHadoop/flume/twitter.sh",
+		"/D/GitHub/EjemplosHadoop/flume/logs.sh",
+		"/D/GitHub/EjemplosHadoop/flume/apache_logs.sh",
+		"/D/GitHub/EjemplosHadoop/flume/ingest-log-access.conf",
+		"/D/GitHub/EjemplosHadoop/access_logs/query.sql",
+		"/D/GitHub/EjemplosHadoop/upload/tokenized_access_logs.sql",
+		"/D/GitHub/EjemplosHadoop/access_logs/insert.sh",
+		"/D/GitHub/EjemplosHadoop/access_logs/tokenized_access_logs.sql",
+		"/D/GitHub/EjemplosHadoop/access_logs/query.hsql.sql",
+		"/D/GitHub/EjemplosHadoop/flume/ingest-twitter.conf",
+		"/D/GitHub/EjemplosHadoop/flume/log4j.properties",
+		"/D/GitHub/EjemplosHadoop/upload/intermediate_access_logs.sql",
+		"/D/GitHub/EjemplosHadoop/flume/morphline.conf",
+		"/D/GitHub/EjemplosHadoop/sqoop/import.sh",
+		"/D/GitHub/EjemplosHadoop/sqoop/import-all-dbretail.conf",
+		"/D/GitHub/EjemplosHadoop/upload/apache_logs.sh",
+		"/D/GitHub/EjemplosHadoop/hive/query.sql",
+		"/D/GitHub/EjemplosHadoop/upload/upload.sh",
+		"/D/GitHub/EjemplosHadoop/upload/process.sql",
+		"/D/GitHub/EjemplosHadoop/sftp-config.json",
+		"/D/GitHub/PracticasHadoop/scripts/sqoop/export-sqoop.sql",
+		"/D/GitHub/GetDataWS/hive/ccaa.sql",
+		"/D/GitHub/GetDataWS/get_data.py",
+		"/D/GitHub/GetDataWS/sftp-config.json",
+		"/D/GitHub/GetDataWS/.gitignore",
+		"/D/GitHub/TwitterTest/get_data.py",
+		"/D/getdata/getdata.py",
+		"/D/GitHub/TwitterTest/comun/util.py",
+		"/D/GitHub/TwitterTest/comun/listeners.py",
+		"/D/GitHub/TwitterTest/comun/secret.py",
+		"/D/GitHub/TwitterTest/.gitignore",
+		"/D/GitHub/TwitterTest/sftp-config.json",
+		"/D/GitHub/TwitterTest/lookup.py",
+		"/D/GitHub/TwitterTest/timeline.py",
+		"/D/GitHub/TwitterTest/README.md",
+		"/D/GitHub/TwitterTest/user.py",
+		"/D/GitHub/TwitterTest/test.py",
+		"/D/GitHub/TwitterTest/comun/__init__.py",
+		"/D/GitHub/TwitterTest/comun/test.py",
+		"/D/GitHub/TwitterTest/data/test.py",
+		"/D/GitHub/TwitterTest/streaming.py",
+		"/D/GitHub/TwitterTest/timeline_cursor.py",
+		"/D/GitHub/TwitterTest/data/tweet.txt",
+		"/D/GitHub/TwitterTest/util.py",
+		"/D/GitHub/TwitterTest/listeners.py",
+		"/D/GitHub/TwitterTest/s.py",
+		"/D/GitHub/TwitterTest/t.py",
+		"/D/GitHub/TwitterTest/tweets.py",
+		"/D/GitHub/TwitterTest/tweet.txt",
+		"/D/GitHub/TwitterTest/secret.py",
+		"/D/agile/Agile_Data_Code_2/ch02/airflow_test.py",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-avales.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/query_pers_contratos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/test-prestamos-par.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/test-pers-contratos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/update-tarjetas-hp9000.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-tarjetas-m4.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/consolida-tarjetas-pcas.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/consolida-tarjetas-m4.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-prestamos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-tarjetas-hp9000.conf",
+		"/D/core-batch.log",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/update-tarjetas-hp9000-2.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/update-contratos.conf",
+		"/D/Cursos/DataHack/Convocatorias/Intensivo Octubre 2017/Entregas/Juan Luis Guell/Queries_SQL.sql",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-tarjetas-pcas.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/consolida-prestamos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/consolida-intervinientes.conf",
+		"/D/prices/output/precios/data/all.txt",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/consolida-all.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-all.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-mibor.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/init.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/descarga-configuracion.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-contratos-confirming.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-cuentas.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-descuento.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-fico.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-leasing-renting.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-productos-all.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/indices-contratos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/crea-indices-contratos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-personas.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-gsi-posicion.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/query_cuentas_creditos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/init-rafa.conf",
+		"/D/Cursos/DataHack/Convocatorias/Bilbao Executive Septiembre 2017/Entregas/David Arteta/datos/climate_change_reduced_MetadataCountry.csv",
+		"/D/Cursos/DataHack/Convocatorias/Bilbao Executive Septiembre 2017/Entregas/David Arteta/datos/climate_change_reduced_MetadataIndicator.csv",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-tarjetas-all.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/pre.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/desa.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/funciones.py",
+		"/D/GitHub/pycoind/pycoind/coins/bitcoin.py",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/drop-tarjetas-m4.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/pruebas-contratos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/check-contratos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/tablas/M4_CONTRATO_EMP.sql",
+		"/D/Cursos/DataHack/Tecnatom/Entregas/Ruben Lozano_NoSQL/PracticaFinal.rar",
+		"/C/Users/dvillanuevaj/Downloads/M4_CONTRATO_EMP_DATA.txt",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/query_coint_ctoloc_x.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-productos-all2.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-avales-v2.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/update-prestamos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/drop-indexes-contratos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-estado-tarjetas.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/alberto.conf",
+		"/D/Cursos/DataHack/Convocatorias/Bilbao Executive Septiembre 2017/Entregas/Patxi/PreguntasPatxi.txt",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/create-indexes-contratos.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/init-job.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-tarjetas.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-divisas.conf",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/conf/batches/carga-demo.conf",
+		"/D/Cursos/MSMK/Hadoop/Material/training/listrecommendations.pig",
+		"/D/Cursos/MSMK/Hadoop/Material/training/training_materials/developer/data/movielens.sql",
+		"/D/Cursos/MSMK/Hadoop/Material/training/training_materials/developer/exercises/averagewordlength/python_sample_solution/mapper.py",
+		"/D/Cursos/MSMK/Hadoop/Material/training/training_materials/developer/exercises/averagewordlength/python_sample_solution/reducer.py"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 110.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Golang Build/Go.sublime-build",
+	"project": "flumeToHDFS.tar.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\GitHub\\Hadoop\\hadoop.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 351.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

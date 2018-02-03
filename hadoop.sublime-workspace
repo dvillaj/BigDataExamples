@@ -1,0 +1,1216 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ex",
+				"executive"
+			],
+			[
+				"patte",
+				"patterns"
+			],
+			[
+				"ts",
+				"tsTARJETAS"
+			],
+			[
+				"tar",
+				"tarjetas_all"
+			],
+			[
+				"Cuen",
+				"cuentaAsociada"
+			],
+			[
+				"lista_",
+				"lista_tarjetas_data"
+			],
+			[
+				"lista",
+				"lista_tarjetas"
+			],
+			[
+				"cuenta",
+				"cuentaAsociada"
+			],
+			[
+				"num",
+				"numContratosDuplicados"
+			],
+			[
+				"quer",
+				"query_prestamos"
+			],
+			[
+				"id",
+				"idcontrn"
+			],
+			[
+				"list",
+				"lista_tarjetas"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 5802,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "from flask import Flask, jsonify\nfrom pymongo import MongoClient\nfrom flask_restful import Api\nfrom flask_restful_swagger import swagger\nimport bson.json_util \n\n# Set up Flask\napp = Flask(__name__)\napi = swagger.docs(Api(app), apiVersion='1', api_spec_url=\"/api/v1/spec\")\n\n# Set up Mongo\nclient = MongoClient() # defaults to localhost\ndb = client.data\n\n# Fetch from/to totals, given a pair of email addresses\n@app.route(\"/executive/<name>\")\n@swagger.operation(notes='some really good notes')\ndef executive(name):\n    \"\"\"\n    Describing one unicorn\n    \"\"\"\n    executive = db.executives.find({\"name\": name}, {'_id' : 0})\n    return jsonify(list(executive))\n\n@app.route(\"/executive\")\n@swagger.operation(notes='some really good notes. Yes indeed!')\ndef executives():\n    \"\"\"\n    Describing all unicorns\n    \"\"\"\n    executive = db.executives.find({}, {'_id' : 0})\n    return bson.json_util.dumps(list(executive)) \n\n\nif __name__ == \"__main__\":\n    app.run(host = '0.0.0.0', debug=False)",
+			"file": "rest/api_rest.py",
+			"file_size": 1016,
+			"file_write_time": 131621116000900595,
+			"settings":
+			{
+				"buffer_size": 981,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "import pymongo\nimport pymongo_spark\nfrom pyspark import SparkContext\n\n# Important: activate pymongo_spark.\npymongo_spark.activate()\n\nsc = SparkContext(appName = \"Export to MongoDB\")\n\nlog4jLogger = sc._jvm.org.apache.log4j \nlog = log4jLogger.LogManager.getLogger(__name__) \n\n\ncsv_lines = sc.textFile(\"file:///home/cloudera/Hadoop/rest/data/example.csv\")\ndata = csv_lines.map(lambda line: line.split(\",\"))\nschema_data = data.map(lambda x: {'name': x[0], 'company': x[1], 'title': x[2]})\nschema_data.saveToMongoDB('mongodb://localhost:27017/data.executives')\n\nlog.warn(\"Done!\")",
+			"file": "rest/export_mongo.py",
+			"file_size": 592,
+			"file_write_time": 131621116001005609,
+			"settings":
+			{
+				"buffer_size": 574,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					""
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Test"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Install"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Cross-Compile (Interactive)"
+				],
+				[
+					"Packages/Golang Build/Go.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Golang Build/Go.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 203.0,
+		"last_filter": "preview",
+		"selected_items":
+		[
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"markdo",
+				"Set Syntax: Markdown"
+			],
+			[
+				"markdow",
+				"Set Syntax: Markdown"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"isntal",
+				"Package Control: Install Package"
+			],
+			[
+				"mardl",
+				"Rename Local and Remote Files"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"Package Control: remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"pig",
+				"Set Syntax: Pig"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ma",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"conf",
+				"Set Syntax: Generic Config"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"sftp s",
+				"SFTP: Browse Server…"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"go build",
+				"GoSublime: Run build command"
+			],
+			[
+				"gosublime",
+				"GoSublime: Browse Declarations"
+			],
+			[
+				"go",
+				"Go: Get"
+			],
+			[
+				"istall ",
+				"Package Control: Install Package"
+			],
+			[
+				"s",
+				"SFTP: Show Panel"
+			],
+			[
+				"sftp",
+				"SFTP: Map to Remote…"
+			],
+			[
+				"show",
+				"SFTP: Show Panel"
+			],
+			[
+				"Python",
+				"SublimeREPL: Python"
+			],
+			[
+				"SFTP",
+				"SublimeREPL: CoffeeScript"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"repl",
+				"SublimeREPL: R"
+			],
+			[
+				"R",
+				"Build With: R"
+			],
+			[
+				"REPL",
+				"Set Syntax: Io Repl"
+			],
+			[
+				"R CONSOLE",
+				"Set Syntax: R Console"
+			]
+		],
+		"width": 476.0
+	},
+	"console":
+	{
+		"height": 148.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/GitHub/Hadoop"
+	],
+	"file_history":
+	[
+		"/D/GitHub/Hadoop/rest/Readme.md",
+		"/D/GitHub/Hadoop/util/gdown.py",
+		"/D/GitHub/Hadoop/util/gdown.pl",
+		"/D/GitHub/Hadoop/precios/Readme.md",
+		"/D/GitHub/Hadoop/rest/export_mongo_df.py",
+		"/D/GitHub/Hadoop/rest/export_mongo.py",
+		"/D/GitHub/Hadoop/rest/web/web_server.py",
+		"/D/GitHub/Hadoop/rest/api_rest.py",
+		"/D/GitHub/Hadoop/grafos/src/scala/GraphExample.scala",
+		"/D/GitHub/Hadoop/grafos/Readme.md",
+		"/D/GitHub/Hadoop/rest/web/templates/table.html",
+		"/D/GitHub/Hadoop/rest/show_data.py",
+		"/D/GitHub/Hadoop/README.md",
+		"/D/GitHub/Hadoop/rest/web/test.py",
+		"/D/GitHub/Hadoop/rest/api_mongo.py",
+		"/D/GitHub/Hadoop/rest/flask_pymongo.py",
+		"/D/GitHub/Hadoop/trends/Readme.md",
+		"/D/GitHub/Hadoop/rest/server.py",
+		"/D/GitHub/Hadoop/spark/start_jupyter.sh",
+		"/D/Cursos/MSMK/Convocatorias/MEBDA_MAYO 2017/Entregas/Conchi/PRACTICA_SQL_ConchiOlivares.sql",
+		"/D/GitHub/Hadoop/config/mongodb-org-3.6.repo",
+		"/D/GitHub/Hadoop/mongodb-org-3.6.repo",
+		"/D/GitHub/Hadoop/precios/tablas.hql",
+		"/D/GitHub/Hadoop/precios/count.py",
+		"/D/GitHub/Hadoop/.gitignore",
+		"/D/GitHub/Hadoop/grafos/pom.xml",
+		"/D/GitHub/Hadoop/grafos/data/metadata-raw.txt",
+		"/D/GitHub/Hadoop/grafos/src/scala/GraphExample2.scala",
+		"/C/Users/dvillanuevaj/Downloads/2590857_T_ONTIME/2590857_T_ONTIME.csv",
+		"/D/GitHub/Hadoop/precios/download_precios.sh",
+		"/D/GitHub/Hadoop/twitter/tablas.hql",
+		"/D/GitHub/Hadoop/precios/data/precios/precios-lite.json",
+		"/D/GitHub/Hadoop/precios/data/ccaa.csv",
+		"/D/GitHub/Hadoop/sentiment/Readme.md",
+		"/D/GitHub/Hadoop/sentiment/flume.conf",
+		"/C/Users/dvillanuevaj/AppData/Roaming/Sublime Text 3/Packages/User/SFTP.errors.log",
+		"/D/GitHub/Hadoop/precios/test.sh",
+		"/D/GitHub/Hadoop/temperature/Readme.md",
+		"/D/GitHub/Hadoop/wordcount/Readme.md",
+		"/D/GitHub/Hadoop/retail/truncate-table.conf",
+		"/D/GitHub/Hadoop/sentiment/red.conf",
+		"/D/GitHub/Hadoop/spark/Readme.md",
+		"/D/GitHub/Hadoop/access_logs/ingest-log-access.conf",
+		"/D/GitHub/Hadoop/graphx/Readme.md",
+		"/D/GitHub/Hadoop/realtime/Readme.md",
+		"/D/GitHub/Hadoop/twitter/Readme.md",
+		"/D/GitHub/Hadoop/access_logs/Readme.md",
+		"/D/GitHub/Hadoop/movielens/create_tables.hql",
+		"/D/GitHub/Hadoop/graphx/src/scala/GraphExample.scala",
+		"/D/GitHub/Hadoop/retail/Readme.md",
+		"/C/Users/dvillanuevaj/Documents/ISBAN/GitLab/adn360-BigData/src/main/scripts/core-batch.sh",
+		"/D/GitHub/Hadoop/graphx/src/scala/com/cloudera/sa/graphx/examples/TreeRootingExample.scala",
+		"/D/GitHub/Hadoop/graphx/data/metadata-processed",
+		"/D/GitHub/Hadoop/graphx/data/metadata-lookup",
+		"/D/GitHub/Hadoop/graphx/data/metadata-raw.txt",
+		"/D/GitHub/Hadoop/sentiment/setup.sh",
+		"/D/GitHub/Hadoop/sentiment/pom.xml",
+		"/D/GitHub/Hadoop/spark/wordcount.py",
+		"/D/GitHub/Hadoop/spark/wordcount.scala",
+		"/D/GitHub/Hadoop/realtime/kafka_wordcount.py",
+		"/D/GitHub/Hadoop/realtime/kafka_spark_dataframes.py",
+		"/D/GitHub/Hadoop/realtime/data/bigdata.txt",
+		"/D/GitHub/Hadoop/kafka/Readme.md",
+		"/D/GitHub/Hadoop/realtime/kafka_wordcount.sh",
+		"/D/GitHub/Hadoop/kafka/kafka-sink.conf",
+		"/D/GitHub/Hadoop/realtime/kafka-sink.conf",
+		"/D/GitHub/Hadoop/temperature/run_local.sh",
+		"/D/GitHub/Hadoop/trends/export_trends.py",
+		"/D/GitHub/BigPrices/spark/insert_precios.py",
+		"/D/GitHub/Hadoop/access_logs/data/access_log",
+		"/D/GitHub/Hadoop/access_logs/insert.hql",
+		"/D/GitHub/Hadoop/movielens/Readme.md",
+		"/D/GitHub/Hadoop/precios/spark/count.py",
+		"/D/GitHub/Hadoop/precios/spark/exec.sh",
+		"/D/GitHub/Hadoop/precios/spark/insert_precios.py",
+		"/D/GitHub/Hadoop/precios/spark/hql/diesel.hql",
+		"/D/GitHub/Hadoop/precios/data/precios/ccaa.csv",
+		"/D/GitHub/Hadoop/twitter/most_influent.hql",
+		"/D/GitHub/cdh-twitter-example/.gitignore",
+		"/D/GitHub/Hadoop/retail/mysql_top10.sql",
+		"/D/GitHub/Hadoop/precios/ccaa.hql",
+		"/D/GitHub/Hadoop/access_logs/query.hql",
+		"/D/GitHub/Hadoop/graphx/src/scala/com/cloudera/sa/graphx/examples/RandomFunExample.scala",
+		"/D/Cursos/Indra/Big Data Alex/Hive_python/CCBB2015.py",
+		"/D/Cursos/Indra/Big Data Alex/Hive_python/CCBB2015.hql",
+		"/D/GitHub/Hadoop/graphx/src/scala/com/cloudera/sa/graphx/examples/ZombeBiteGraphExample.scala",
+		"/D/GitHub/Hadoop/access_logs/logs.hql",
+		"/D/GitHub/Hadoop/access_logs/tokenized_access_logs.hql",
+		"/D/GitHub/Hadoop/access_logs/intermediate_access_logs.hql",
+		"/D/GitHub/Hadoop/graphx/links.txt",
+		"/D/GitHub/Hadoop/sftp-config.json",
+		"/D/GitHub/Hadoop/graphx/pom.xml",
+		"/C/Users/dvillanuevaj/AppData/Roaming/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/D/GitHub/Hadoop/oozie/Readme.md",
+		"/D/GitHub/Hadoop/oozie/cloudera-dev-training-1.0-SNAPSHOT.jar",
+		"/D/GitHub/Hadoop/oozie/run.sh",
+		"/D/GitHub/Hadoop/movielens/hive.sh",
+		"/D/GitHub/Hadoop/movielens/import.sh",
+		"/D/GitHub/Hadoop/movielens/sqoop.sh",
+		"/D/GitHub/Hadoop/movielens/mahout.sh",
+		"/D/GitHub/Hadoop/retail/export.sh",
+		"/D/GitHub/Hadoop/movielens/listrecommendations.pig",
+		"/D/GitHub/Hadoop/movielens/users",
+		"/D/GitHub/Hadoop/oozie/lab1-java-mapreduce/input/00000",
+		"/D/GitHub/Hadoop/movielens/data/recs",
+		"/D/GitHub/Hadoop/movielens/data/movie",
+		"/D/GitHub/Hadoop/movielens/data/results",
+		"/D/GitHub/Hadoop/movielens/data/longlist",
+		"/D/GitHub/Hadoop/movielens/data/recs.pig",
+		"/D/GitHub/Hadoop/kafka/kafka_wordcount.py",
+		"/D/GitHub/Hadoop/kafka/kafka_spark_dataframes.py",
+		"/D/GitHub/Hadoop/kafka/test-kafka.sh",
+		"/D/GitHub/Hadoop/streaming/kafka_spark_dataframes.py",
+		"/D/GitHub/Hadoop/data/shakespeare.tar.gz",
+		"/D/GitHub/Hadoop/kafka/kafka_wordcount.sh",
+		"/D/GitHub/Hadoop/kafka-sink.conf",
+		"/D/GitHub/Hadoop/twitter/tweets.hql",
+		"/D/GitHub/Hadoop/sentiment/src/main/java/MrManager.java",
+		"/D/GitHub/Hadoop/sentiment/analysis.sh",
+		"/D/GitHub/Hadoop/sentiment/src/main/java/Map.java",
+		"/D/GitHub/Hadoop/sentiment/src/main/java/Reduce.java",
+		"/D/GitHub/Hadoop/spark/data/shakespeare.txt",
+		"/D/GitHub/Hadoop/sentiment/ingest.sh",
+		"/D/GitHub/Hadoop/sentiment/data/neg-words.txt",
+		"/D/GitHub/Hadoop/sentiment/data/pos-words.txt",
+		"/D/GitHub/Hadoop/sentiment/data/stop-words.txt",
+		"/D/GitHub/flumeToHDFS.tar/flumeToHDFS/makefile",
+		"/D/GitHub/Hadoop/sentiment/info.txt"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 110.0,
+		"where_history":
+		[
+			"D:\\GitHub\\Hadoop"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"gdown.py",
+			")\n",
+			"jsonify",
+			"PYTHONPATH",
+			"yum",
+			"telenet",
+			"sudo yum install",
+			"airport",
+			"flights",
+			"**/*.",
+			"ideess",
+			"9381",
+			",",
+			"mysql",
+			"r_tulo",
+			"R_tulo",
+			"IDEESS",
+			"idprovincia",
+			" STRING",
+			"warm",
+			"agente_red",
+			"Ingestión",
+			"impala",
+			"BASEDIR",
+			"BASE",
+			"DWH_TABLON_CARTERAS_BASICAS_2015_AUX1",
+			"export",
+			"1.6.0-cdh5.12.1",
+			"scala.version",
+			"scala",
+			"tier1",
+			"retw",
+			"tier1",
+			"agente_red_fichero_red_fichero",
+			"agente",
+			"hdfsSink",
+			"red_fichero_agente",
+			"redToFile_agente",
+			"red",
+			"notebook",
+			"notebook-dir",
+			"#.",
+			"notebook-dir",
+			"c",
+			"directory",
+			"\"",
+			"\\u00f3",
+			"flume-hive-ingest",
+			"sink1"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"item",
+			"data",
+			",\\n",
+			"",
+			"warn",
+			"agente",
+			"agente_red_fichero",
+			"destino",
+			"agente_red_fichero",
+			"red_fichero_agente",
+			"agente_red",
+			"`",
+			"ó",
+			"agente",
+			"hdfsSink"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5802,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5730,
+								5730
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3861.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "rest/api_rest.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 981,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								669,
+								680
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										679,
+										680
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										668,
+										669
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "rest/export_mongo.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 574,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": 46,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										573,
+										574
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										565,
+										566
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o://C:\\Users\\dvillanuevaj\\Documents":
+	{
+		"height": 520.0
+	},
+	"output.9o://C:\\Users\\dvillanuevaj\\Documents\\go\\src":
+	{
+		"height": 448.0
+	},
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 353.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.golang_build":
+	{
+		"height": 132.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 120.0
+	},
+	"pinned_build_system": "Packages/Golang Build/Go.sublime-build",
+	"project": "hadoop.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\GitHub\\core-batch.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 475.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}
