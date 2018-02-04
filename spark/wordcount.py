@@ -1,4 +1,3 @@
-
 from operator import add
 
 textFile = sc.textFile("hdfs://localhost:8020/user/cloudera/shakespeare.txt")
