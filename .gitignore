@@ -1,0 +1,7 @@
+sftp-config.json
+*.sublime*
+**/target
+**/dependency-reduced-pom.xml
+.ipynb_checkpoints
+**/*.iml
+.idea
