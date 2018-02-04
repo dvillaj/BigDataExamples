@@ -101,7 +101,7 @@ public class MrManager extends Configured implements Tool {
 		} else {
 			System.out.println("\n\n**********\n\n");
 			System.out.println("No positive or negative words found in input data.");
-			System.out.println("\n\n\*********\n\n");
+			System.out.println("\n\n*********\n\n");
 		}
 		/*
 		 *
