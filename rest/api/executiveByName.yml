@@ -1,0 +1,30 @@
+Obtiene una lista de los trabajos de un determinado ejecutivo
+---
+tags:
+  - Lista de trabajos por ejecutivo
+parameters:
+  - name: name
+    in: path
+    type: string
+    required: true
+    description: Nombre del ejecutivo
+responses:
+  200:
+    description: Colección de trabajos
+    schema: 
+      type: array
+      items:        
+        type: object
+        properties:
+          company:
+            type: string
+            description: Compañia
+            default: Data Syndrome
+          name:
+            type: string
+            description: Nombre del ejecutivo
+            default: Russell Jurney
+          title:
+            title: string
+            description: Puesto
+            default: CEO
