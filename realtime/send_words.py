@@ -14,7 +14,7 @@ parser.add_argument("--json", help="Mensaje en formato json", action='store_true
 parser.add_argument('--server', help="Servidor", default = "localhost")
 parser.add_argument('--port', help="Puerto", default = "9999")
 parser.add_argument('--letter', help="Letra por la que empieza la palabra")
-parser.add_argument('--delay', help="Tiempo entre palabras", default = "0.1")
+parser.add_argument('--time', help="Tiempo entre palabras", default = "0.1")
 
 args = parser.parse_args()
 
@@ -44,7 +44,7 @@ try:
             
         s.send("%s\n" %  message)
         print("Mensaje: %s" % message)
-        time.sleep(float(args.delay))
+        time.sleep(float(args.time))
 
     s.close()
     print("Enviados %s mensajes!" % args.n)
