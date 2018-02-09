@@ -28,7 +28,11 @@ def process(time, rdd):
         client = MongoClient('localhost',27017) 
         db = client.get_database('data')
         collection = db.get_collection('streaming')
-        collection.update({'_id':doc['_id']}, doc , upsert=True)
+
+        id = {'_id':doc['_id']}
+        doc_db = collection.find_one(id)
+        if doc_db is None or doc_db['timestamp'] < doc['timestamp']:
+            collection.update(id, doc , upsert=True)
 
     try:
         rdd = rdd.map(lambda x: process_json(x[1]))
