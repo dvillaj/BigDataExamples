@@ -5,13 +5,9 @@ from pyspark import SparkContext, SparkConf
 from pyspark.streaming import StreamingContext
 from pyspark.streaming.kafka import KafkaUtils, OffsetRange, TopicAndPartition
 from datetime import datetime
+import argparse
 import sys, os, re
 import json
-
-# Process data every 10 seconds
-PERIOD=1
-BROKERS='localhost:9092'
-TOPIC='flume'
 
 
 def process(time, rdd):
@@ -43,6 +39,20 @@ def process(time, rdd):
     except:
         pass
 
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('topic', help="Tópico Kafka")
+args = parser.parse_args()
+
+if args.topic is None:
+    parser.error("Es necesario especificar un tópico kafka!")
+    sys.exit(1)
+    
+# Process data every 10 seconds
+PERIOD=1
+BROKERS='localhost:9092'
+TOPIC=args.topic
 
 if __name__ == "__main__":
 
