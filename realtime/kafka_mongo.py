@@ -63,7 +63,7 @@ if __name__ == "__main__":
     topicPartion = TopicAndPartition(TOPIC, partition)
     fromOffset = {topicPartion: long(start)}
 
-    stream = KafkaUtils.createDirectStream(ssc, [TOPIC],kafkaParams, fromOffsets=fromOffset)
+    stream = KafkaUtils.createDirectStream(ssc, [TOPIC], kafkaParams, fromOffsets=fromOffset)
     stream.foreachRDD(process)
 
     ssc.start()

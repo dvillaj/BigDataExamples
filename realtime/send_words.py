@@ -12,7 +12,7 @@ parser.add_argument("--words", help="Número de palabras en cada envío", defaul
 parser.add_argument("--seed", help="Semilla aleatoria")
 parser.add_argument("--json", help="Mensaje en formato json", action='store_true', default = False)
 parser.add_argument('--server', help="Servidor", default = "localhost")
-parser.add_argument('--port', help="Puerto", default = "9999")
+parser.add_argument('--port', help="Puerto")
 parser.add_argument('--letter', help="Letra por la que empieza la palabra")
 parser.add_argument('--time', help="Tiempo entre palabras", default = "0.1")
 

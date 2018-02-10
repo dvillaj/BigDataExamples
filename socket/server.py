@@ -7,14 +7,18 @@ parser = argparse.ArgumentParser()
 parser.add_argument("port", help="Número de puerto")
 args = parser.parse_args()
 
-print("Server in localhost:%s" % args.port)
+print("Server started. Listening at port %s" %  args.port)
 
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 serversocket.bind(('localhost', int(args.port)))
-serversocket.listen(5) # become a server socket, maximum 5 connections
+serversocket.listen(5) # Número máximo de conexiones concurrentes
 
 while True:
     connection, address = serversocket.accept()
-    buf = connection.recv(64)
+    print("Connection accepted from " + repr(address[1]))
+
+    connection.send("Server approved connection\n")
+    buf = connection.recv(1026)
     if len(buf) > 0:
-        print("Message from %s: %s" % (address, buf))
+        print(repr(address[1]) + ": " + buf)
+    connection.close()
