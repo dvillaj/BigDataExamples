@@ -6,21 +6,13 @@ from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
 from pyspark.sql import Row, SQLContext
 from pyspark.streaming.kafka import KafkaUtils, OffsetRange, TopicAndPartition
+import argparse
 
 
 def getSqlContextInstance(sparkContext):
     if ('sqlContextSingletonInstance' not in globals()):
         globals()['sqlContextSingletonInstance'] = SQLContext(sparkContext)
     return globals()['sqlContextSingletonInstance']
-
-# Process data every 10 seconds
-PERIOD=10
-BROKERS='localhost:9092'
-TOPICS = ['flume']
-GROUP_ID='sql'
-APP_NAME = 'TwitterStreamSql'
-CHECKPOINT = '/tmp/%s' % APP_NAME
-STREAM_CONTEXT_TIMEOUT=70
 
 def process(time, rdd):
     print("========= %s =========" % str(time))
@@ -65,6 +57,25 @@ def functionToCreateContext():
 
     ssc.checkpoint(CHECKPOINT)
     return ssc
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('topic', help="Tópico Kafka")
+args = parser.parse_args()
+
+if args.topic is None:
+    parser.error("Es necesario especificar un tópico kafka!")
+    sys.exit(1)
+
+
+# Process data every 10 seconds
+PERIOD=10
+BROKERS='localhost:9092'
+TOPICS = [args.topic]
+GROUP_ID='sql'
+APP_NAME = 'TwitterStreamSql'
+CHECKPOINT = '/tmp/%s' % APP_NAME
+STREAM_CONTEXT_TIMEOUT=70
 
 
 if __name__ == "__main__":

@@ -2,14 +2,8 @@ import sys, os, re
 
 from pyspark import SparkContext, SparkConf
 from pyspark.streaming import StreamingContext
-from pyspark.streaming.kafka import KafkaUtils, OffsetRange, TopicAndPartition
-
-# Process data every 10 seconds
-PERIOD=10
-ZOOKEEPER='localhost:2181'
-BROKERS='localhost:9092'
-TOPIC='flume'
-GROUP_ID='classic.group'
+from pyspark.streaming.kafka import KafkaUtils
+import argparse
 
 def proceso(time, rdd):
   print("========= %s =========" % str(time))
@@ -25,6 +19,24 @@ def proceso(time, rdd):
   print("Total de mensajes = %d " % total)
   if total > 0:
     print("Top 5 = %s " % str(counts.take(5)))
+
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('topic', help="Tópico Kafka")
+args = parser.parse_args()
+
+if args.topic is None:
+    parser.error("Es necesario especificar un tópico kafka!")
+    sys.exit(1)
+
+
+# Process data every 10 seconds
+PERIOD=10
+ZOOKEEPER='localhost:2181'
+BROKERS='localhost:9092'
+TOPIC=args.topic
+GROUP_ID='classic.group'
 
 if __name__ == "__main__":
   conf = SparkConf().set("spark.default.parallelism", 1)

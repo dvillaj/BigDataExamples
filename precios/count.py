@@ -10,7 +10,7 @@ log = log4jLogger.LogManager.getLogger(__name__)
 sqlContext = HiveContext(sc)
 results = sqlContext.sql("SELECT * from precios.ComunidadesAutonomas")
 
-log.warn("Comunidades autonomas")
+log.warn("Comunidades autónomas")
 results.show()
 
 

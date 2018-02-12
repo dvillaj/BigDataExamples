@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 import pymongo
 import pymongo_spark
 from pyspark import SparkContext
@@ -15,7 +17,11 @@ sc = SparkContext(appName = "Export to MongoDB")
 log4jLogger = sc._jvm.org.apache.log4j 
 log = log4jLogger.LogManager.getLogger(__name__) 
 
+log.warn("Borrado de la colección destino")
+
 db.executives.drop()
+
+log.warn("Lectura y grabación de datos en MongoDB")
 
 csv_lines = sc.textFile("file:///home/cloudera/Hadoop/rest/data/example.csv")
 data = csv_lines.map(lambda line: line.split(","))
