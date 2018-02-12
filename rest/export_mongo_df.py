@@ -41,17 +41,17 @@ job_counts.show()
 
 
 # Spark SQL
-log.warn("Lectura de datos")
+log.warn("Lectura de datos con Spark SQL")
 
 df = sqlContext.read.format("com.databricks.spark.csv") \
     .option("header", "false") \
     .option("inferSchema", "true") \
     .option("delimiter", ",") \
     .load("file:///home/cloudera/Hadoop/rest/data/example.csv") \
-    .selectExpr("C0 as name", "C1 as company", "C2 as title")
+    .selectExpr("_c0 as name", "_c1 as company", "_c2 as title")
 
 df.printSchema()
 df.show()
 
-log.warn("Exportación a Mongo")
+log.warn("Exportación de los datos a MongoDB")
 df.write.format("com.mongodb.spark.sql.DefaultSource").mode("overwrite").save()
