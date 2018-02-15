@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 import sys, os, re
 
 from pyspark import SparkContext, SparkConf
@@ -36,12 +38,13 @@ PERIOD=10
 ZOOKEEPER='localhost:2181'
 BROKERS='localhost:9092'
 TOPIC=args.topic
-GROUP_ID='classic.group'
+GROUP_ID='group.1'
+APP_NAME = 'KafkaStreamWordCount'
 
 if __name__ == "__main__":
   conf = SparkConf().set("spark.default.parallelism", 1)
 
-  sc = SparkContext(appName="PythonStreaming Kafka WordCount")
+  sc = SparkContext(appName=APP_NAME)
   ssc = StreamingContext(sc, PERIOD)
 
   kafkaParams= {"metadata.broker.list": BROKERS, "group.id": GROUP_ID, 

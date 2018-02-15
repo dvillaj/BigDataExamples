@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 from __future__ import print_function
 
 import sys
@@ -72,7 +74,7 @@ if args.topic is None:
 PERIOD=10
 BROKERS='localhost:9092'
 TOPICS = [args.topic]
-GROUP_ID='sql'
+GROUP_ID='group-1'
 APP_NAME = 'TwitterStreamSql'
 CHECKPOINT = '/tmp/%s' % APP_NAME
 STREAM_CONTEXT_TIMEOUT=70

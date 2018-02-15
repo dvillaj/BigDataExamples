@@ -14,7 +14,7 @@ def process(time, rdd):
     print("========= %s =========" % str(time))
 
     def process_json(json_string):
-        doc = json.loads(json_string)
+        doc = json.loads(json_string.decode('utf-8'))
         doc['_id'] = doc['id']
         doc['timestamp'] = datetime.strptime(doc['timestamp'], '%Y-%m-%d %H:%M:%S.%f')
         doc.pop('id', None)
@@ -53,13 +53,15 @@ if args.topic is None:
 PERIOD=1
 BROKERS='localhost:9092'
 TOPIC=args.topic
+GROUP_ID='group.1'
+APP_NAME = 'KafkaStreamMongo'
 
 if __name__ == "__main__":
 
     #pymongo_spark.activate()
 
     #conf = SparkConf().set("spark.default.parallelism", 1)
-    sc = SparkContext(appName="PythonStreaming Export to Mongo")
+    sc = SparkContext(appName=APP_NAME)
 
     log4jLogger = sc._jvm.org.apache.log4j 
     log = log4jLogger.LogManager.getLogger(__name__) 
@@ -67,7 +69,7 @@ if __name__ == "__main__":
     ssc = StreamingContext(sc, PERIOD)
 
     # Lee la partición 0 desde el principio
-    kafkaParams = {"metadata.broker.list": BROKERS, "group.id": "0"}
+    kafkaParams = {"metadata.broker.list": BROKERS, "group.id": GROUP_ID}
     start = 0
     partition = 0
     topicPartion = TopicAndPartition(TOPIC, partition)

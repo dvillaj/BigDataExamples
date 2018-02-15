@@ -1,8 +1,8 @@
-# Repositorio de ejemplos Big Data
+# Ejemplos Big Data
 
 Colección de ejemplos donde se pueden observar múltiples casos de uso dentro de un proyecto BigData
 
-La mayoría de los ejemplos están basados en lenguaje Python y scala en mucha menor medida
+La mayoría de los ejemplos están basados en lenguaje **Python** y scala (en mucha menor medida)
 
 Los componentes utilizados son:
 
@@ -13,10 +13,11 @@ Los componentes utilizados son:
 - Hive
 - Impala
 - Spark
+- Spark 2
 - Oozie
 - MongoDB
 - Jupyter
-- Spark 2
+- Kafka
 - R
 
 [Daniel Villanueva Jiménez](https://www.linkedin.com/in/dvillaj/)  
