@@ -22,16 +22,14 @@ df = sqlContext.read.json("/raw/msmk")
 df.registerTempTable("jsons")
 df.printSchema()
 
-
-dataset = sqlContext.sql("select text as texto, retweet_count as retweets from jsons")
-dataset.show()
+sqlContext.sql("select text, retweet_count from jsons").show()
 log.warn("Total : %d" % df.count())
 
 log.warn("Modelado")
 
-tokenizer = Tokenizer().setInputCol("texto").setOutputCol("palabras")
+tokenizer = Tokenizer().setInputCol("text").setOutputCol("palabras")
 tf = HashingTF().setInputCol("palabras").setOutputCol("features")
-regresion = LinearRegression(featuresCol="features",labelCol="retweets")
+regresion = LinearRegression(featuresCol="features",labelCol="retweet_count")
 pipeline = Pipeline().setStages([tokenizer, tf, regresion])
 
 params = ParamGridBuilder() \
@@ -40,7 +38,7 @@ params = ParamGridBuilder() \
     .build()
 
 evaluator = RegressionEvaluator(predictionCol="prediction", 
-        labelCol="retweets", 
+        labelCol="retweet_count", 
         metricName="mse")
 
 validador = CrossValidator() \
@@ -49,7 +47,7 @@ validador = CrossValidator() \
     .setEvaluator(evaluator)
 
 
-train, test = dataset.randomSplit([0.7, 0.3])
+train, test = df.randomSplit([0.7, 0.3])
 pipeline_fitted = validador.fit(train)
 
 resultado = evaluator.evaluate(pipeline_fitted.transform(test))

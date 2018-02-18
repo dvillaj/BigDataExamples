@@ -26,33 +26,14 @@ def getModel(sparkContext):
 
 def process(time, rdd):
 
-    def get_json(items):
-        return { '_id': items[0], 
-                 'texto':  items[1], 
-                 'retweet_count': items[2], 
-                 'usuario' : items[3],
-                 'timestamp' : datetime.utcnow(),
-                 'prediction' : items[4]
-                 }
-
-    def saveToMongo(doc):
-        client = MongoClient('localhost',27017) 
-        db = client.get_database('data')
-        collection = db.get_collection('twitter')
-
-        id = {'_id':doc['_id']}
-        doc_db = collection.find_one(id)
-        if doc_db is None:
-            collection.update(id, doc , upsert=True)
-
     def process_json(json_string):
         doc = json.loads(json_string)
 
         new_doc = {}
-        new_doc['id'] = doc['id']
-        new_doc['texto'] = doc['text']
+        new_doc['_id'] = doc['id']
+        new_doc['text'] = doc['text']
         new_doc['retweet_count'] = doc['retweet_count']
-        new_doc['usuario'] = doc['user']['screen_name']
+        new_doc['user'] = doc['user']['screen_name']
 
         return new_doc
 
@@ -63,20 +44,21 @@ def process(time, rdd):
     json_rdd = rdd.map(lambda x: process_json(x[1]))
     if not json_rdd.isEmpty():
 
-        json_df = sqlContext.createDataFrame(json_rdd)
-        predicciones_df = model.transform(json_df)
+        dataset = sqlContext.createDataFrame(json_rdd)
+        predicciones = model.transform(dataset)
 
-        predicciones_df.show()
-        print("Count %d " % predicciones_df.count())
+        predicciones.show()
+        print("Count %d " % predicciones.count())
 
-        predicciones_df.registerTempTable("predicciones")
-
-        result_df = sqlContext.sql("""
-            select id, texto, retweet_count, usuario, prediction
-            from predicciones
-        """)
-
-        result_df.rdd.map(get_json).foreach(saveToMongo)
+        predicciones = predicciones.drop("features")
+        predicciones.write \
+            .format("com.mongodb.spark.sql.DefaultSource") \
+            .option("uri", "mongodb://127.0.0.1") \
+            .option("database", "model") \
+            .option("collection", "twitter") \
+            .option("replaceDocument", "false") \
+            .mode("append") \
+            .save()
 
 def functionToCreateContext():
     sc = SparkContext(appName=APP_NAME)
