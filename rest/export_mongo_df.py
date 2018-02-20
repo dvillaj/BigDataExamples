@@ -50,7 +50,7 @@ df = sqlContext.read.format("com.databricks.spark.csv") \
     .option("inferSchema", "true") \
     .option("delimiter", ",") \
     .load("file:///home/cloudera/Hadoop/rest/data/example.csv") \
-    .selectExpr("C0 as name", "C1 as company", "C2 as title") 
+    .selectExpr("_c0 as name", "_c1 as company", "_c2 as title") 
 
 df.printSchema()
 df.show()
