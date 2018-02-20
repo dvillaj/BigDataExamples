@@ -8,17 +8,20 @@ log4jLogger = sc._jvm.org.apache.log4j
 log = log4jLogger.LogManager.getLogger(__name__) 
 
 sqlContext = HiveContext(sc)
-results = sqlContext.sql("SELECT * from precios.ComunidadesAutonomas")
 
 log.warn("Comunidades autónomas")
+results = sqlContext.sql("SELECT * from precios.ComunidadesAutonomas")
 results.show()
 
 
-log.warn("Precios")
+log.warn("Lectura de los Precios en formato JSON")
 
 precios = sqlContext.read.json("/raw/precios")
 precios.registerTempTable("tabla_precios")
 precios.printSchema()
+
+
+log.warn("¿Donde está el precio más barato de Madrid?")
 
 results = sqlContext.sql("""
     SELECT p.localidad, 
