@@ -15,15 +15,14 @@ Los componentes utilizados son:
 - Spark 2
 - Oozie
 - MongoDB
-- Jupyter
 - Kafka
 - Pig
 - Mahout
+- Jupyter
+- ZooKeeper
 - R
 
 Autor: [Daniel Villanueva Jiménez](https://www.linkedin.com/in/dvillaj/)  
 Puedes ponerte en contacto conmigo en la dirección [dvillaj@gmail.com](mailto:dvillaj@gmail.com)
-
-Nota para los usuarios de Mac: Si quieres copiar y pegar el código incluido en este libro, deberás utilizar el software Adobe Reader o el lector de ficheros PDF que viene incluido en el navegador Chrome
 
 Versión 1
