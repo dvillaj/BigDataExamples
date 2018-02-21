@@ -14,7 +14,7 @@ print(s.recv(1024))
 
 if args.mensaje is None:
     inpt = raw_input('Escribe cualquier cosa y pulsa Enter... ')
-    s.send(inpt
+    s.send(inpt)
 else:
     s.send (args.mensaje)
 
