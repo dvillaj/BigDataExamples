@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 from kazoo.client import KazooClient
 import logging
 import argparse
@@ -11,16 +13,13 @@ if args.counter is None:
     parser.error("Es necesario especificar el nombre del contador!")
     sys.exit(1)
 
-if not isinstance(args.value, (int, long)):
-    parser.error("El valor debe de ser un número!")
-    sys.exit(1)
-
 logging.basicConfig()
 zk = KazooClient(hosts='127.0.0.1:2181')
 zk.start()
 
 counter = zk.Counter("/%s" % args.counter, default = 0)
 counter += int(args.value)
-print(counter.value)
+
+print("Contador %s\nValor %d" %(args.counter, counter.value))
 
 zk.stop()
