@@ -13,13 +13,14 @@ Los componentes utilizados son:
 - Hive
 - Impala
 - Spark 2
-- Oozie
 - MongoDB
 - Kafka
-- Pig
-- Mahout
 - Jupyter
 - ZooKeeper
+- Oozie
+- Mahout
+- MySQL
+- Pig
 - R
 
 Autor: [Daniel Villanueva Jiménez](https://www.linkedin.com/in/dvillaj/)  
