@@ -11,7 +11,6 @@ sqlContext = HiveContext(sc)
 log4jLogger = sc._jvm.org.apache.log4j 
 log = log4jLogger.LogManager.getLogger(__name__) 
 
-# Preproceso con RDD's
 
 log.warn("Lectura y análisis de datos")
 
@@ -39,19 +38,3 @@ GROUP BY name
 """)
 job_counts.show()
 
-
-# Spark SQL
-log.warn("Lectura de datos con Spark SQL")
-
-df = sqlContext.read.format("com.databricks.spark.csv") \
-    .option("header", "false") \
-    .option("inferSchema", "true") \
-    .option("delimiter", ",") \
-    .load("file:///home/cloudera/Hadoop/rest/data/example.csv") \
-    .selectExpr("_c0 as name", "_c1 as company", "_c2 as title") 
-
-df.printSchema()
-df.show()
-
-log.warn("Exportación de los datos a MongoDB")
-df.write.format("com.mongodb.spark.sql.DefaultSource").mode("overwrite").save()
