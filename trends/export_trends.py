@@ -3,7 +3,7 @@ from pyspark import SparkContext
 from pyspark.sql.types import *
 import re
 
-def camel_case_split(word):
+def python_camel_case_split(word):
     def split(identifier):
         matches = re.finditer('.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', identifier)
         return [m.group(0) for m in matches]
@@ -32,7 +32,8 @@ results.show()
 
 
 log.warn("Procesamiento")
-sqlContext.udf.register("camel_split", camel_case_split, ArrayType(StringType()))
+sqlContext.udf.register("camel_split_function", 
+    python_camel_case_split, ArrayType(StringType()))
 
 df = sqlContext.sql(""" 
     with data as (
@@ -48,7 +49,7 @@ df = sqlContext.sql("""
         location, 
         trend.name,
         trend.tweet_volume as volumen,
-        explode(camel_split(trend.name)) as word
+        explode(camel_split_function(trend.name)) as word
     from data2
     ), data4 as (
         select dia, 
