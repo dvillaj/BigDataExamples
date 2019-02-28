@@ -7,7 +7,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <scala.version>2.11.6</scala.version>
-    <hadoop.version>1.6.0-cdh5.12.1</hadoop.version>
+    <hadoop.version>1.6.0-cdh5.13.1</hadoop.version>
   </properties>
 
 
