@@ -29,7 +29,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <hadoop.version>2.6.0-cdh5.13.1</hadoop.version>
+    <hadoop.version>2.10.1</hadoop.version>
   </properties>
 
   <build>
